@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--suppress ALL -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignupFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/hello_blank_fragment" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <EditText
+            android:id="@+id/etUsernameSignup"
+            app:layout_constraintBottom_toTopOf="@+id/etPasswordSignup"
+            app:layout_constraintStart_toStartOf="@+id/etLastnameSignupFragment"
+            app:layout_constraintTop_toBottomOf="@+id/etLastnameSignupFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="username...."
+            android:inputType="textEmailAddress"
+            tools:layout_editor_absoluteX="83dp"
+            tools:layout_editor_absoluteY="267dp" />
+
+        <EditText
+            android:id="@+id/etPasswordSignup"
+            app:layout_constraintBottom_toTopOf="@+id/etConfirmPasswordSignupFragment"
+            app:layout_constraintStart_toStartOf="@+id/etUsernameSignup"
+            app:layout_constraintTop_toBottomOf="@+id/etUsernameSignup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="password...."
+            android:inputType="textPassword"
+            tools:layout_editor_absoluteX="83dp"
+            tools:layout_editor_absoluteY="405dp" />
+
+        <Button
+            android:id="@+id/btnSignupSignup"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ivPhotoSignupFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#6F7F8F"
+            android:text="SIGNUP"
+            tools:layout_editor_absoluteX="139dp"
+            tools:layout_editor_absoluteY="557dp" />
+
+        <ImageView
+            android:id="@+id/ivPhotoSignupFragment"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnSignupSignup"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etAddressSignupFragment"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/ic_add"
+            android:src="@drawable/top_backgroun_profile"
+            tools:layout_editor_absoluteX="139dp"
+            tools:layout_editor_absoluteY="536dp" />
+
+        <TextView
+            android:id="@+id/H1"
+            app:layout_constraintBottom_toTopOf="@+id/etFirstnameSignupFragment"
+            app:layout_constraintEnd_toEndOf="@+id/etFirstnameSignupFragment"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Readly"
+            android:textSize="50sp"
+            tools:layout_editor_absoluteX="120dp"
+            tools:layout_editor_absoluteY="86dp" />
+
+        <EditText
+            android:id="@+id/etFirstnameSignupFragment"
+            app:layout_constraintBottom_toTopOf="@+id/etLastnameSignupFragment"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/H1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="firstname..."
+            android:inputType="text"
+            tools:layout_editor_absoluteX="83dp"
+            tools:layout_editor_absoluteY="168dp" />
+
+        <EditText
+            android:id="@+id/etLastnameSignupFragment"
+            app:layout_constraintBottom_toTopOf="@+id/etUsernameSignup"
+            app:layout_constraintStart_toStartOf="@+id/etFirstnameSignupFragment"
+            app:layout_constraintTop_toBottomOf="@+id/etFirstnameSignupFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="lastname..."
+            android:inputType="text"
+            tools:layout_editor_absoluteX="83dp"
+            tools:layout_editor_absoluteY="221dp" />
+
+        <EditText
+            android:id="@+id/etConfirmPasswordSignupFragment"
+            app:layout_constraintBottom_toTopOf="@+id/etPhoneSignupFragment"
+            app:layout_constraintStart_toStartOf="@+id/etPasswordSignup"
+            app:layout_constraintTop_toBottomOf="@+id/etPasswordSignup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="confirm password..."
+            android:inputType="textPassword"
+            tools:layout_editor_absoluteX="83dp"
+            tools:layout_editor_absoluteY="451dp" />
+
+        <EditText
+            android:id="@+id/etPhoneSignupFragment"
+            app:layout_constraintBottom_toTopOf="@+id/etAddressSignupFragment"
+            app:layout_constraintStart_toStartOf="@+id/etConfirmPasswordSignupFragment"
+            app:layout_constraintTop_toBottomOf="@+id/etConfirmPasswordSignupFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="phone..."
+            android:inputType="number|numberDecimal|numberSigned"
+            tools:layout_editor_absoluteX="83dp"
+            tools:layout_editor_absoluteY="313dp" />
+
+        <EditText
+            android:id="@+id/etAddressSignupFragment"
+            app:layout_constraintBottom_toTopOf="@+id/ivPhotoSignupFragment"
+            app:layout_constraintStart_toStartOf="@+id/ivPhotoSignupFragment"
+            app:layout_constraintTop_toBottomOf="@+id/etPhoneSignupFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="address..."
+            android:inputType="text"
+            tools:layout_editor_absoluteX="83dp"
+            tools:layout_editor_absoluteY="359dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
