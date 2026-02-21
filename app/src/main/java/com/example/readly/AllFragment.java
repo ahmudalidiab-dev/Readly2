@@ -38,7 +38,6 @@ public class AllFragment extends Fragment {
     private FloatingActionButton btnAdd;
     private SearchView srchView;
     private Button favIcon;
-    private Map<String, Book> carsMap;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -85,33 +84,8 @@ public class AllFragment extends Fragment {
 
             }
         });
-        srchView = getView().findViewById(R.id.srchViewCarListFragment);
-        srchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                //applyFilter(query);
-                return false;
-            }
 
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                //applyFilter(newText);
-                return false;
             }
-        });
-        btnAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                gotoAddCarFragment();
-            }
-
-            private void gotoAddCarFragment() {
-            }
-        });
-        btnAdd.setVisibility(View.INVISIBLE); // currently hidden
-
-        ((MainActivity)getActivity()).pushFragment(new AllFragment());
-    }
 
 
     private void showNoDataDialogue() {

@@ -30,16 +30,11 @@ public class AddBookFragment extends Fragment {
     private static final int GALLERY_REQUEST_CODE = 123;
     ImageView img;
     private String imageStr;
-    private EditText ettitle,etprice,etauthur,etid,
+    private EditText ettitle,etauthur,etid,
             etyear,etcategory,etphoto;
-    private Button btnAddbook;
+    private Button btnAddBook;
     private FirebaseServices fbs;
-    private String title;
-    private String id;
-    private String photo;
-    private String category;
-    private String authur;
-    private Spinner yearOfCarSpinner;
+
 
 
     @Override
@@ -71,53 +66,29 @@ public class AddBookFragment extends Fragment {
         ettitle=getView().findViewById(R.id.etLastnameSignupFragment);
 
 
-        yearOfCarSpinner=getView().findViewById(R.id.searchEndYearSpinner);
-        ArrayAdapter<String> adapter2 =new ArrayAdapter<String>(getActivity(), R.layout.activity_main,years);
-        adapter2.setDropDownViewResource(R.layout.activity_main);
-        yearOfCarSpinner.setAdapter(adapter2);
+        }
 
-        yearOfCarSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String value=parent.getItemAtPosition(position).toString();
-                Toast.makeText(getActivity(), value, Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
-
-
-
-    }
 
     private void addToFirestore() {
 
-        String nameCar, horse_power, owners, phone,
-                car_num, manufacturer, year, car_type, Car_model,
-                test ,kilometre,Engine_capacity,Gear_shifting_model,price ;
-        String color;
+        String title, id,  year, photo,
+                category, authur;
 
-        title=ettitle.getText().toString();
+        title = ettitle.getText().toString();
         id=etid.getText().toString();
         year=etyear.getText().toString();
         photo = etphoto.getText().toString();
         category=etcategory.getText().toString();
         authur=etauthur.getText().toString();
-        price=etprice.getText().toString();
 
 
-        if (price.trim().isEmpty()
-                ||
-              authur.trim().isEmpty()                               ||
+
+        if (   authur.trim().isEmpty()                               ||
                 year.trim().isEmpty()                                       ||
                photo.trim().isEmpty()                                  ||
                 title.trim().isEmpty()                                       ||
                 id.trim().isEmpty()                                  ||
-                category.trim().isEmpty()                            ||
-                price.trim().isEmpty())
+                category.trim().isEmpty())
 
         {
             Toast.makeText(getActivity(), "sorry some data missing incorrect !", Toast.LENGTH_SHORT).show();
@@ -128,8 +99,8 @@ public class AddBookFragment extends Fragment {
 
         if (fbs.getSelectedImageURL() == null)
         {
-            book= new Book(title,year,photo,authur,id,category,price);
-
+            //book= new Book(title,year,photo,authur,id,category,price);
+            //Book(String id, String authur, String price, String title, String category, String year, String photo)
         }
 
 
@@ -139,7 +110,7 @@ public class AddBookFragment extends Fragment {
                     public void onSuccess(DocumentReference documentReference) {
                         Toast.makeText(getActivity(), "ADD book is Succesed ", Toast.LENGTH_SHORT).show();
                         Log.e("addToFirestore() - add to collection: ", "Successful!");
-                        gotoCarList();
+                        //gotoCarList();
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
@@ -170,7 +141,7 @@ public class AddBookFragment extends Fragment {
     public void gotoBookList() {
 
         FragmentTransaction ft= getActivity().getSupportFragmentManager().beginTransaction();
-        ft.replace(R.id.main,new BookListFragment());
+        ft.replace(R.id.main,new AllFragment());
         ft.commit();
     }
 

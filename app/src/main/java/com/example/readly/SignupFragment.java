@@ -104,7 +104,6 @@ public class SignupFragment extends Fragment {
         etAddress = getView().findViewById(R.id.etAddressSignupFragment);
         btnSignup=getView().findViewById(R.id.btnSignupSignup);
         ivUserPhoto = getView().findViewById(R.id.ivPhotoSignupFragment);
-        msg = Utils.distance();
         ivUserPhoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -167,7 +166,6 @@ public class SignupFragment extends Fragment {
                                     fbs.getFire().collection("users").add(user).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                                         @Override
                                         public void onSuccess(DocumentReference documentReference) {
-                                            gotoCarList();
                                         }
                                     }).addOnFailureListener(new OnFailureListener() {
                                         @Override
@@ -205,31 +203,7 @@ public class SignupFragment extends Fragment {
         if (requestCode == GALLERY_REQUEST_CODE && resultCode == getActivity().RESULT_OK && data != null) {
             Uri selectedImageUri = data.getData();
             ivUserPhoto.setImageURI(selectedImageUri);
-            assert distance() != null;
-            Object clone;
-            if (distance().equals) {
-                clone = true;
-            } else {
-                clone = false;
-            }
         }
     }
-
-    private Object distance() {
-        return null;
-    }
-
-    public void gotoCarList()
-    {
-        FragmentTransaction ft=getActivity().getSupportFragmentManager().beginTransaction();
-        ft.replace(R.id.main,new CarListMapFragment());
-        ft.commit();
-        setNavigationBarVisible();
-    }
-
-    private void setNavigationBarVisible() {
-        ((MainActivity)getActivity()).getBottomNavigationView().setVisibility(View.VISIBLE);
-    }
-
 
 }

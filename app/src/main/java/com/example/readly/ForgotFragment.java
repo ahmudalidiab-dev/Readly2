@@ -58,6 +58,5 @@ public class ForgotFragment extends Fragment {
 
             }
         });
-        ((MainActivity)getActivity()).pushFragment(new FrgotPasswordFragment());
     }
 }

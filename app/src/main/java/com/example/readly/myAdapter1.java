@@ -44,6 +44,7 @@ public class myAdapter1 extends RecyclerView.Adapter {
     public static class OnItemClickListener {
         public void onItemClick(int position) {
             // Handle item click here
+            /*
             String selectedItem = list.get(position).get();
             Toast.makeText(getActivity(), "Clicked: " + selectedItem, Toast.LENGTH_SHORT).show();
             Bundle args = new Bundle();
@@ -52,7 +53,7 @@ public class myAdapter1 extends RecyclerView.Adapter {
             cd.setArguments(args);
             FragmentTransaction ft=getActivity().getSupportFragmentManager().beginTransaction();
             ft.replace(R.id.frameLayout,cd);
-            ft.commit();
+            ft.commit();*/
         }
     }
 }
