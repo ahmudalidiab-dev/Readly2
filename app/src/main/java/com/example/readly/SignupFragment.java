@@ -134,47 +134,13 @@ public class SignupFragment extends Fragment {
                     return;
                 }
 
-//                if(fbs.getSelectedImageURL() == null){
-//                    msg.showMessageDialog(getActivity(), "Image are Empty !");
-//
-//                }
-
-
-//                if (fbs.getSelectedImageURL() == null)
-//                {
-//                    User user = new User(firstname, lastname, username, phone, address, "");
-//                }
-//                else {
-//                    User user = new User(firstname, lastname, username, phone, address, fbs.getSelectedImageURL().toString());
-//                }
-                //Signup procedure
-                Uri selectedImageUri = fbs.getSelectedImageURL();
-                String imageURL = "";
-                if (selectedImageUri != null) {
-                    imageURL = selectedImageUri.toString();
-                }
-                @SuppressLint("RestrictedApi") User user = new User(firstname);
-
                 fbs.getAuth().createUserWithEmailAndPassword(username,password)
                         .addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
 
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
 
-                                if (task.isSuccessful())
-                                {
-                                    fbs.getFire().collection("users").add(user).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                                        @Override
-                                        public void onSuccess(DocumentReference documentReference) {
-                                        }
-                                    }).addOnFailureListener(new OnFailureListener() {
-                                        @Override
-                                        public void onFailure(@NonNull Exception e) {
-                                            Log.e("SignupFragment: signupOnClick: ", e.getMessage());
-                                        }
-                                    });
-                                    // String firstName, String lastName, String username, String phone, String address, String photo) {
-                                    Toast.makeText(getActivity(), "you have succesfully signed up", Toast.LENGTH_SHORT).show();
+                                if (task.isSuccessful()) {
                                 }
                                 else
                                 {
@@ -188,7 +154,6 @@ public class SignupFragment extends Fragment {
 
             }
         });
-        ((MainActivity)getActivity()).getFragmentManager();
     }
 
     private void openGallery() {
