@@ -99,8 +99,8 @@ public class LoginFragment extends Fragment {
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
                         if (task.isSuccessful()) {
-                            //Toast.makeText(getActivity(), "you have succesfully logged", Toast.LENGTH_SHORT).show();
-                            //gotoAddCarFragment();
+                            Toast.makeText(getActivity(), "you have succesfully logged", Toast.LENGTH_SHORT).show();
+                            gotoAddBookFragment();
                             fbs = FirebaseServices.reloadInstance();
 
                             Toast.makeText(getActivity(), "Welcome ", Toast.LENGTH_SHORT).show();
@@ -129,6 +129,13 @@ public class LoginFragment extends Fragment {
     private void gotoFrgotPasswordFragment() {
         FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.main, new FrgotPasswordFragment());
+        ft.commit();
+
+    }
+
+    private void gotoAddBookFragment() {
+        FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.main, new AddBookFragment());
         ft.commit();
 
     }
